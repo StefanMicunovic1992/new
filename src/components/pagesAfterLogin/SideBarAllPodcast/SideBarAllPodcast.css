@@ -1,0 +1,23 @@
+#mainDivSideBar{
+    width: 15vw;
+    height: 100vh;
+    overflow-y: scroll;
+    padding-top: 100px;
+    transition-duration: 1s;
+    background-color: green;
+}
+
+.onePodcast{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    border: 2px solid black;
+}
+
+.imgOfPodcastSideBar{
+    width: 40%;
+}

@@ -1,0 +1,25 @@
+#divForVideoAndDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 20px;
+}
+
+
+iframe{
+    width: 70vw;
+    height: 60vh;
+}
+
+#description{
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#moreOrLessTextBtn{
+    border: 1px solid black;
+    padding: 10px 20px;
+}

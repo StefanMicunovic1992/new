@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#loginAndRegistar{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/public/images/background.jpg');
+    
+}
+
+
+form{
+    width: 20vw;
+    height: 100vh;
+    background-color: rgba(100, 100, 100, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    position: absolute;
+    right: 0px;
+}
+
+.inputRegistar{
+    width: 80%;
+    height: 4%;
+    padding-left: 10px;
+}
+
+#btnSubmit{
+    width: 50%;
+    height: 4%;
+}
+
+p{
+    text-align: center;
+    font-size: 1.3rem;
+    width: 80%;
+    line-height: 40px;
+    font-weight: bold;
+}
