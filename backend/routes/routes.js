@@ -6,6 +6,7 @@ const savePodcastTemplate = require('../models/SavePodcastModels')
 const saveCommentTemplate = require('../models/SaveCommentModels');
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv');
+const nodemailer = require('nodemailer');
 
 
 router.post('/signup', async (req, res) => {
@@ -140,6 +141,34 @@ router.post('/getAllComents',async(req,res)=>{
     let findComment = await saveCommentTemplate.findOne({ idOfVideo: req.body.videoId});
     console.log(findComment);
     res.send(findComment)
+})
+
+router.post('/sendmessage',async(req,res)=>{
+    console.log(req.body);
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'stefanmicunovic1992@gmail.com',
+            pass: 'svkqwmyjrtwvnfrn'
+        }
+    });
+
+    const mailOption = {
+        from: req.body.email,
+        to: 'stefanmicunovic1992@gmail.com',
+        subject: `Message from -- ${req.body.email} -- ${req.body.name}  ${req.body.surname}`,
+        text: req.body.message
+    }
+
+    transporter.sendMail(mailOption, (error,info) => {
+        if(error){
+            console.log(error)
+            res.send('error')
+        }else{
+            console.log(info)
+            res.send('success')
+        }
+    })
 })
 
 
