@@ -64,10 +64,34 @@ function Contact() {
       }
 
       axios.post('http://localhost:5000/app/sendmessage', messageData)
-                .then(res => console.log(res))
+                .then(res => checkResponse(res.statusText))
+
+      const checkResponse = (response) =>{
+        if(response=='OK'){
+          setName(undefined)
+          setSurname(undefined)
+          setEmail(undefined)
+          setMessage(undefined)
+          document.getElementById('name').value = ''
+          document.getElementById('surname').value = ''
+          document.getElementById('email').value = ''
+          document.getElementById('message').value = ''
+          const message = document.getElementById('msg')
+          message.classList.remove('msgUnsuccessfullySend')
+          message.classList.add('msgSuccessfullySend')
+          message.innerText = 'Your message has been successfully sent'
+          const allIcon = document.querySelectorAll('.icon')
+          allIcon.forEach(elem=>{
+            elem.style.visibility = "hidden";
+          })
+        }
+      }
 
     }else{
-      document.getElementById('msgNotSend').style.visibility = 'visible'
+          const message = document.getElementById('msg')
+          message.classList.remove('msgSuccessfullySend')
+          message.classList.add('msgUnsuccessfullySend')
+          message.innerText = 'Your message has not been sent'
     }
 
   }
@@ -112,7 +136,7 @@ function Contact() {
         </div>
       </div>
       <div id="divForBtn">
-        <p id="msgNotSend">You have not filled in all the fields correctly</p>
+        <p id="msg"></p>
         <button id="sendMessageBtn" onClick={sendMessage}>SEND MESSAGE</button>
       </div>
     </div>
@@ -120,3 +144,4 @@ function Contact() {
 }
 
 export default Contact;
+//You have not filled in all the fields correctly

@@ -122,10 +122,14 @@
     transition: 0.5s;
 }
 
-#msgNotSend{
-  visibility: hidden;
+.msgUnsuccessfullySend{
   color: red;
 }
+
+.msgSuccessfullySend{
+  color: green;
+}
+
 
 #sendMessageBtn:hover{
     color: whitesmoke;

@@ -4,6 +4,10 @@
     padding-top: 100px;
 }
 
+#mainDivSelectedPodcast::-webkit-scrollbar{
+    width: 2rem;
+}
+
 #dataAboutPodcast{
     display: flex;
     flex-direction: column;

@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 function Navigation() {
   const currentUser = useSelector((state) => state.currentUser.currentUser);
-  console.log(currentUser);
   return (
     <header>
       <div id="divForLogo">

@@ -10,7 +10,7 @@ import Cookies from "js-cookie";
 
 function SelectedPodcast() {
   const idOfSelectedPodcast = useSelector((state) => state.onePodcast.selectedPodcast);
-
+  console.log(idOfSelectedPodcast)
   const history = useNavigate();
   const dispatch = useDispatch();
 

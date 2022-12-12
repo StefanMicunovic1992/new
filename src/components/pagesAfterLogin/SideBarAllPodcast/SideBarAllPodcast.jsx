@@ -77,18 +77,16 @@ function SideBarAllPodcast() {
 
     return (
         <div id='mainDivSideBar'>
-            <div id='allPodcast'>
 {   
     podcast?.map(elem=>
             <div key={elem.id} className='onePodcast'>
                 <img className='imgOfPodcastSideBar' src={elem.snippet.thumbnails.medium.url} alt={elem.snippet.thumbnails.high.url} />
-                <h2>{elem.snippet.title}</h2>
-                <button data-id={elem.id} onClick={(e)=>selectedPodcast(e)}>Watch</button>
+                <h2 className='nameOfPodcast'>{elem.snippet.title}</h2>
+                <button className='btnSideBar' data-id={elem.id} onClick={(e)=>selectedPodcast(e)}>Watch</button>
             </div>
         )
 }        
             </div>
-        </div>
     )
 }
 

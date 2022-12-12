@@ -1,23 +1,43 @@
-#mainDivSideBar{
-    width: 15vw;
-    height: 100vh;
-    overflow-y: scroll;
-    padding-top: 100px;
-    transition-duration: 1s;
-    background-color: green;
+#mainDivSideBar {
+  width: 15vw;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 100px;
+  transition-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
-.onePodcast{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 20px;
-    border: 2px solid black;
+#mainDivSideBar::-webkit-scrollbar{
+    width: 2rem;
 }
 
-.imgOfPodcastSideBar{
-    width: 40%;
+.onePodcast {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+.imgOfPodcastSideBar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.btnSideBar {
+  padding: 5px 20px;
+}
+
+.btnSideBar:hover {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+.nameOfPodcast{
+width: 100%;
+text-align: center;
 }

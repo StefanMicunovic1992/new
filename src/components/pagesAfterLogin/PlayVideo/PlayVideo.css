@@ -1,3 +1,15 @@
+#mainDivPlayVideo{
+    background-image: url("/public/images/2.png");
+    height: 100vh;
+    top: 0;
+    overflow-y: scroll;
+}
+
+#mainDivPlayVideo::-webkit-scrollbar{
+    width: 2rem;
+}
+
+
 #divForVideoAndDescription{
     display: flex;
     flex-direction: column;
