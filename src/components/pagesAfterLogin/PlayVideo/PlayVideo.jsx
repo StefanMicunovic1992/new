@@ -7,21 +7,16 @@ import "./PlayVideo.css";
 
 
 function PlayVideo() {
+
   const history = useNavigate();
   const dataOfVideo = useSelector((state) => state.video.videoId);
-  console.log(typeof dataOfVideo);
-
   const [urlOfVideo, setUrlOfVideo] = useState();
-
 
    useEffect(() => {
     console.log('ulazi u useEffect');
     if (typeof dataOfVideo == 'undefined') {
       history("/home_page");
-      console.log('ulazi u if')
     } else {
-      console.log(dataOfVideo)
-      console.log('ulazi u else')
       setUrlOfVideo(`https://www.youtube.com/embed/${dataOfVideo[0].contentDetails.videoId}`);
     }
   }, [dataOfVideo]);

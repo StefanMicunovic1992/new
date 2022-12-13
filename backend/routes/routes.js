@@ -45,7 +45,6 @@ router.post('/findUser', async (req, res) => {
         console.log(findUser)
         bcrypt.compare(req.body.password, findUser.password, (err, data) => {
             if (data) {
-                console.log('pogodjena sifra')
                 const accessToken = jwt.sign(findUser.username, process.env.ACCESS_TOKEN_SECRET)
                 return res.status(200).json([
                     { accessToken: accessToken },
@@ -98,7 +97,9 @@ router.post('/checkCookie', (req, res) => {
                 { msg: "OK" },
                 {
                     username:findUser.username,
-                    administrator:findUser.administrator
+                    administrator:findUser.administrator,
+                    email:findUser.email,
+                    fullName:findUser.fullName
                 }
             ])
         }
@@ -169,6 +170,13 @@ router.post('/sendmessage',async(req,res)=>{
             res.send('success')
         }
     })
+})
+
+router.post('/saveChanges', async (req, res) => {
+    
+    console.log(req.body);
+    
+
 })
 
 
