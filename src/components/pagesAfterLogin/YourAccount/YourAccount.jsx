@@ -42,32 +42,36 @@ function YourAccount() {
 
   const sendNewData = () =>{
 
-      const newFullName = document.getElementById('fullnameAccountPage').value
       const newUsername = document.getElementById('usernameAccountPage').value
       const newEmail = document.getElementById('emailAccountPage').value
       const newPass = document.getElementById('newPassAccountPage').value
 
     const newData = {
         findByUsername: currentUser.username,
-        fullName: newFullName?newFullName:currentUser.fullName,
-        username: newUsername?newFullName:currentUser.username,
-        email: newEmail?newEmail:currentUser.email,
-        password: newPass?newPass:undefined
+        username: newUsername?newUsername:'no change',
+        email: newEmail?newEmail:'no change',
+        password: newPass?newPass:'no change'
     }
     console.log(newData);
     
     const result = axios.post("http://localhost:5000/app/saveChanges", newData)
-                    .then((res) => console.log(res));
+                    .then((res) => checkResponse(res.data));
+    
+    const checkResponse = (data) =>{
+      if(data == 'ok'){
+        deleteCookieAndLogout()
+      }else{
+        console.log(data)
+        document.getElementById('responseMessage').innerText = data
+      }
+    }
   }
 
   return (
     <div id="mainDivAccountPage">
       <Navigation></Navigation> 
       <div id="dataOfUser">
-        <div className="inputAccountPage">
-            <label htmlFor="fullnameAccountPage">Full name</label>
-            <input type="text" name="fullnameAccountPage" id="fullnameAccountPage" placeholder={currentUser.fullName}/>
-        </div>
+        <p>If you want to change some data, enter it in the corresponding field and click the save button.</p>
         <div className="inputAccountPage">
             <label htmlFor="username">Username</label>
             <input type="text" name="usernameAccountPage" id="usernameAccountPage" placeholder={currentUser.username}/>
@@ -80,6 +84,7 @@ function YourAccount() {
             <label htmlFor="newPassAccountPage">New password</label>
             <input type="text" name="newPassAccountPage" id="newPassAccountPage" />
         </div>
+        <p id="responseMessage"></p>
         <button id="saveChanges" onClick={sendNewData}>SAVE</button>
       </div>
       <div>

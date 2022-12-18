@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ComponentForhHelloMesage from '../DivWithHelloMesage/ComponentForhHelloMesage';
 import SelectedPodcast from '../SelectedPodcast/SelectedPodcast';

@@ -63,6 +63,7 @@ function SelectedPodcast() {
         setNextPageToken(data.nextPageToken);
         setPreviousToken(data.prevPageToken);
         setAllVideoFromSelectedPodcast(data.items);
+        console.log(data.items)
       })
       .catch((error) => console.log(error));
   };
@@ -94,8 +95,8 @@ function SelectedPodcast() {
               className="oneCurrentPodcast"
             >
               <img
-                src={element.snippet.thumbnails.medium.url}
-                alt={element.snippet.thumbnails.medium.url}
+                src={element?.snippet.thumbnails.medium.url}
+                alt={element?.snippet.thumbnails.medium.url}
               />
               <h3>{element.snippet.title}</h3>
               <button

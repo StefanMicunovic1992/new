@@ -1,20 +1,18 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import './Registar.css';
-import { BrowserRouter, Routes, Route, NavLink, useNavigate } from 'react-router-dom';
-import Login from '../login/Login';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Cookies from 'js-cookie';
+import Login from '../login/Login';
 
 
 
 function Registar() {
 
-  const [fullName, setfullName] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useNavigate();
-
 
   useEffect(() => {
     const isCookie = Cookies.get('loginCookie')
@@ -32,15 +30,9 @@ function Registar() {
     }
 });
   
-
-
-
-
-
   function sendRegistrationForm(e) {
     e.preventDefault()
     const registared = {
-      fullName: fullName,
       username: username,
       email: email,
       password: password
@@ -51,7 +43,6 @@ function Registar() {
       if (data.status == 'error') {
         alert(data.error)
       } else {
-        setfullName('');
         setUsername('')
         setEmail('')
         setPassword('')
@@ -67,7 +58,6 @@ function Registar() {
     <section id='loginAndRegistar'>
       <form>
         <p>Create your account</p>
-        <input type="text" className='inputRegistar' placeholder='enter full name' name='fullName' onChange={(e) => setfullName(e.target.value)} />
         <input type="text" className='inputRegistar' placeholder='enter username' name='username' onChange={(e) => setUsername(e.target.value)} />
         <input type="text" className='inputRegistar' placeholder='enter email' name='email' onChange={(e) => setEmail(e.target.value)} />
         <input type="text" className='inputRegistar' placeholder='enter password' name='password' onChange={(e) => setPassword(e.target.value)} />
