@@ -1,13 +1,13 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './components/pagesAfterLogin/HomePage/HomePage';
-import Login from './components/loginAndRegistar/login/Login';
-import Registar from './components/loginAndRegistar/registar/Registar';
-import SelectedPodcast from './components/pagesAfterLogin/SelectedPodcast/SelectedPodcast';
-import YourAccount from './components/pagesAfterLogin/YourAccount/YourAccount';
-import Administrator from './components/pagesAfterLogin/Administrator/Administrator';
-import PlayVideo from './components/pagesAfterLogin/PlayVideo/PlayVideo';
-import Contact from './components/pagesAfterLogin/Contact/Contact';
+import HomePage from './components/HomePage/HomePage';
+import Login from './components/Login/Login';
+import Registar from './components/Registar/Registar';
+import SelectedPodcast from './components/SelectedPodcast/SelectedPodcast';
+import YourAccount from './components/YourAccount/YourAccount';
+import Administrator from './components/Administrator/Administrator';
+import PlayVideo from './components/PlayVideo/PlayVideo';
+import Contact from './components/Contact/Contact';
 
 
 

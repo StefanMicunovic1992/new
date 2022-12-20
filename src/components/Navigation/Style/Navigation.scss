@@ -1,0 +1,114 @@
+@import "../../../Mixin/Mixin.scss";
+
+#headerComponent {
+  @include flex-centar-row();
+  width: 100vw;
+  width: 100vw;
+  height: 8vh;
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  background-color: rgba(100, 100, 100, 0.7);
+  z-index: 1;
+  #divForLogo {
+    padding: 10px;
+    width: 50%;
+    img {
+      width: 50%;
+    }
+  }
+  nav {
+    width: 50%;
+    height: 100%;
+    @include flex-centar-row();
+    justify-content: flex-end;
+    padding-right: 30px;
+    gap: 30px;
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: whitesmoke;
+      transition-duration: 0.5s;
+      &:hover {
+        color: black;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+#mobileMenuDiv {
+  display: none;
+}
+
+#divForMobileLink {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  #headerComponent {
+    display: none;
+  }
+  #mobileMenuDiv {
+    z-index: 1;
+    height: 8vh;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+    background-color: rgba(100, 100, 100, 0.7);
+    display: block;
+    width: 100vw;
+    @include flex-centar-row();
+    #divForLogoMobileMenu {
+      width: 50%;
+      img {
+        width: 70%;
+      }
+    }
+    #moobileDivIcon {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 20px;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+}
+#divForMobileLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 100px;
+  gap: 50px;
+  background-color: #333;
+  z-index: 1;
+  #closeMenuIcon {
+    text-decoration: none;
+    font-size: 2rem;
+    color: whitesmoke;
+    font-weight: 800;
+    transition: 0.2s;
+    &:hover {
+        transform: scale(1.2);
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: whitesmoke;
+    font-weight: 800;
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

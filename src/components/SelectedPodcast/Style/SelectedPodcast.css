@@ -1,0 +1,286 @@
+#mainSectionSelectedPodcast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  overflow-x: scroll;
+  gap: 50px;
+}
+#mainSectionSelectedPodcast::-webkit-scrollbar {
+  width: 2px;
+}
+#mainSectionSelectedPodcast #dataAboutPodcast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+#mainSectionSelectedPodcast #dataAboutPodcast img {
+  border-radius: 50%;
+}
+#mainSectionSelectedPodcast #dataAboutPodcast h2 {
+  font-size: 2rem;
+}
+#mainSectionSelectedPodcast #dataAboutPodcast p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0px 20px;
+  line-height: 30px;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 35vh;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  transition-duration: 0.5s;
+  box-shadow: 17px 20px 53px -5px rgb(0, 0, 0);
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast:hover {
+  transform: scale(1.1);
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast h3 {
+  text-align: center;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast button {
+  padding: 10px 40px;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast button:hover {
+  background-color: #333;
+  color: whitesmoke;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #paginationBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0px;
+  width: 100%;
+  gap: 30px;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #paginationBtn #previousPage,
+#mainSectionSelectedPodcast #currentPodcastDiv #paginationBtn #nextPage {
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+}
+#mainSectionSelectedPodcast #currentPodcastDiv #paginationBtn #previousPage:hover,
+#mainSectionSelectedPodcast #currentPodcastDiv #paginationBtn #nextPage:hover {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+@media (max-width: 1540px) {
+  #mainSectionSelectedPodcast {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    gap: 50px;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast img {
+    width: 20%;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast h2 {
+    font-size: 1.7rem;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0px 40px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    height: 45vh;
+    gap: 20px;
+    padding: 20px;
+  }
+  #mainSectionSelectedPodcast #paginationBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px;
+    width: 100%;
+    gap: 30px;
+  }
+  #mainSectionSelectedPodcast #paginationBtn #previousPage,
+#mainSectionSelectedPodcast #paginationBtn #nextPage {
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+  }
+  #mainSectionSelectedPodcast #paginationBtn #previousPage:hover,
+#mainSectionSelectedPodcast #paginationBtn #nextPage:hover {
+    background-color: #333;
+    color: whitesmoke;
+  }
+}
+@media (max-width: 1100px) {
+  #mainSectionSelectedPodcast {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    gap: 50px;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast img {
+    width: 20%;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast h2 {
+    font-size: 1.6rem;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0px 40px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 10px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast img {
+    width: 100%;
+    height: 50%;
+  }
+  #mainSectionSelectedPodcast #paginationBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0px;
+    width: 100%;
+    gap: 30px;
+  }
+  #mainSectionSelectedPodcast #paginationBtn #previousPage,
+#mainSectionSelectedPodcast #paginationBtn #nextPage {
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+  }
+  #mainSectionSelectedPodcast #paginationBtn #previousPage:hover,
+#mainSectionSelectedPodcast #paginationBtn #nextPage:hover {
+    background-color: #333;
+    color: whitesmoke;
+  }
+}
+@media (max-width: 500px) {
+  #mainSectionSelectedPodcast #dataAboutPodcast {
+    padding: 5px;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast img {
+    width: 20%;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast h2 {
+    font-size: 1.5rem;
+  }
+  #mainSectionSelectedPodcast #dataAboutPodcast p {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 5px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  #mainSectionSelectedPodcast #currentPodcastDiv #divForPodcast .oneCurrentPodcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 45vh;
+    gap: 20px;
+    padding: 20px;
+  }
+  #mainSectionSelectedPodcast #paginationBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0px;
+    width: 100%;
+    gap: 30px;
+  }
+  #mainSectionSelectedPodcast #paginationBtn #previousPage,
+#mainSectionSelectedPodcast #paginationBtn #nextPage {
+    padding: 10px 5px;
+  }
+}/*# sourceMappingURL=SelectedPodcast.css.map */

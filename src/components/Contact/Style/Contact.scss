@@ -1,0 +1,298 @@
+@import "../../../Mixin/Mixin.scss";
+
+#mainDivContact {
+  background-image: url("/public/images/background-opacity.jpg");
+  width: 100vw;
+  height: 100vh;
+  #contactDescription {
+    padding: 100px 50px 50px 50px;
+    @include flex-centar-column();
+    gap: 30px;
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  #contactDiv {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+      "name surname email"
+      "msg msg msg";
+    padding: 20px 50px;
+    .oneInput {
+      @include flex-centar-column();
+      gap: 10px;
+      margin-bottom: 30px;
+      .labelInputIconDiv {
+        width: 100%;
+        @include flex-centar-row();
+        gap: 20px;
+        label {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        input {
+          width: 70%;
+          height: 30px;
+          padding: 10px;
+          font-size: 1.1rem;
+          outline: none;
+          transition: 0.5s;
+          opacity: 0.8;
+          &:focus {
+            border: 3px solid lightskyblue;
+            border-radius: 5px;
+            transform: scale(1.1);
+            border-radius: 5%;
+            opacity: 1;
+          }
+        }
+      }
+      textarea {
+        padding: 10px;
+        box-sizing: border-box;
+        max-width: 90%;
+        min-width: 90%;
+        max-height: 30vh;
+        min-height: 30vh;
+        font-size: 1.2rem;
+        transition: 0.5s;
+        outline: none;
+        opacity: 0.8;
+        &:focus {
+          border: 3px solid lightskyblue;
+          border-radius: 5px;
+          transform: scale(1.1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#nameDiv {
+  grid-area: name;
+  width: 500px;
+}
+
+#surnameDiv {
+  grid-area: surname;
+  width: 500px;
+}
+
+#emailDiv {
+  grid-area: email;
+  width: 500px;
+}
+
+#messageDiv {
+  grid-area: msg;
+  label {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+#divForBtn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sendMessageBtn {
+  padding: 10px 25px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.msgUnsuccessfullySend {
+  color: red;
+}
+
+.msgSuccessfullySend {
+  color: green;
+}
+
+#sendMessageBtn:hover {
+  color: whitesmoke;
+  background-color: #333;
+}
+
+.icon {
+  color: green;
+  font-size: 2rem;
+  border: 3px solid green;
+  border-radius: 50%;
+  padding: 5px;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1540px) {
+  #mainDivContact {
+    background-size: cover;
+    #contactDescription {
+      padding: 70px;
+    }
+    #contactDiv {
+      .oneInput {
+        gap: 10px;
+        margin-bottom: 30px;
+        .labelInputIconDiv {
+          input {
+            width: 65%;
+          }
+        }
+        textarea {
+          padding: 10px;
+          box-sizing: border-box;
+          max-width: 85%;
+          min-width: 85%;
+        }
+      }
+    }
+  }
+
+  #nameDiv {
+    width: 450px;
+  }
+
+  #surnameDiv {
+    width: 450px;
+  }
+
+  #emailDiv {
+    width: 450px;
+  }
+
+  #messageDiv {
+    label {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+  #divForBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #nameDiv {
+    width: 400px;
+  }
+
+  #surnameDiv {
+    width: 400px;
+  }
+
+  #emailDiv {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #mainDivContact {
+    #contactDescription {
+      padding: 100px 50px 50px 50px;
+      @include flex-centar-column();
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+    #contactDiv {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .oneInput {
+        @include flex-centar-column();
+        gap: 10px;
+        margin-bottom: 30px;
+        .labelInputIconDiv {
+          width: 100%;
+          @include flex-centar-row();
+          gap: 20px;
+          label {
+            width: 30%;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+          input {
+            width: 70%;
+            height: 30px;
+            padding: 10px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: 0.5s;
+            opacity: 0.8;
+            &:focus {
+              border: 3px solid lightskyblue;
+              border-radius: 5px;
+              transform: scale(1.1);
+              border-radius: 5%;
+              opacity: 1;
+            }
+          }
+        }
+        textarea {
+          padding: 10px;
+          box-sizing: border-box;
+          max-width: 80vw;
+          min-width: 80vw;
+          max-height: 30vh;
+          min-height: 30vh;
+          font-size: 1.2rem;
+          transition: 0.5s;
+          outline: none;
+          opacity: 0.8;
+          &:focus {
+            border: 3px solid lightskyblue;
+            border-radius: 5px;
+            transform: scale(1.1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mainDivContact {
+    width: 100vw;
+    height: 100vh;
+    #contactDescription {
+      padding: 80px 50px 50px 50px;
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+    #contactDiv {
+      .oneInput {
+        margin-bottom: 20px;
+        .labelInputIconDiv {
+          width: 100%;
+          @include flex-centar-row();
+          gap: 20px;
+        }
+      }
+    }
+  }
+}

@@ -62,6 +62,12 @@ router.post('/findUser', async (req, res) => {
     }
 })
 
+router.post('/deleteaccount', async (req, res) => {
+    console.log(req.body)
+    let findUser = await signUpTemplate.findOneAndDelete({ username: req.body.username });
+    res.send({msg:'succes'})
+})
+
 router.post('/savePodcastInDatabase', async (req, res) => {
     console.log(req.body);
     const podcastSave = new savePodcastTemplate({
@@ -113,16 +119,7 @@ router.get('/getAllPodcast',async(req,res)=>{
 })
 
 router.post('/sendcomment',async(req,res)=>{
-    console.log(req.body);
-    let findUser = await signUpTemplate.findOne({ username: req.body.username });
-    if(findUser.commentsOnVideoId.includes(req.body.video)){
-        console.log('postoji');
-    }else{
-        console.log('ne postoji')
-        findUser.commentsOnVideoId.unshift(req.body.video)
-        findUser.save()
-    }
-
+    
     let findComment = await saveCommentTemplate.findOne({ idOfVideo: req.body.video});
     if(findComment){
         findComment.dataOfcomment.unshift(req.body)
@@ -148,6 +145,14 @@ router.post('/getAllComents',async(req,res)=>{
     console.log(req.body);
     let findComment = await saveCommentTemplate.findOne({ idOfVideo: req.body.videoId});
     console.log(findComment);
+    res.send(findComment)
+})
+
+router.post('/deleteComment',async(req,res)=>{
+    let findComment = await saveCommentTemplate.findOne({ idOfVideo: req.body.idOfVideo});
+    const newComments = findComment.dataOfcomment.filter(elem=>elem.time!=req.body.idOfComment)
+    findComment.dataOfcomment = newComments;
+    findComment.save();
     res.send(findComment)
 })
 

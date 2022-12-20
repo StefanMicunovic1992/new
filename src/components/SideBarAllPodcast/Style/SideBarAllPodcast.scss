@@ -1,0 +1,56 @@
+@import "../../../Mixin/Mixin.scss";
+
+#mainDivSideBar {
+    @include flex-centar-column();
+    gap: 40px;
+  .onePodcast {
+    @include flex-centar-column();
+    width: 100%;
+    gap: 15px;
+    .imgOfPodcastSideBar {
+      width: 30%;
+      border-radius: 50%;
+    }
+    .btnSideBar {
+      padding: 5px 20px;
+      transition: 0.3s;
+      &:hover {
+        background-color: #333;
+        color: whitesmoke;
+      }
+    }
+    .nameOfPodcast {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1540px) {
+  #mainDivSideBar {
+    @include flex-centar-column();
+    gap: 40px;
+  .onePodcast {
+    @include flex-centar-column();
+    width: 100%;
+    gap: 15px;
+    .imgOfPodcastSideBar {
+      width: 30%;
+      border-radius: 50%;
+    }
+    .btnSideBar {
+      padding: 5px 20px;
+      transition: 0.3s;
+      &:hover {
+        background-color: #333;
+        color: whitesmoke;
+      }
+    }
+    .nameOfPodcast {
+      width: 100%;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+} 
+}

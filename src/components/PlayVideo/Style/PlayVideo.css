@@ -1,0 +1,276 @@
+#mainDivPlayVideo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  background-image: linear-gradient(to right top, #ffd4b2, #ffdab3, #ffe0b4, #ffe7b5, #ffedb8, #faefb9, #f6f2bc, #f1f4be, #e7f3c0, #def1c2, #d6efc4, #ceedc7);
+  background-color: #fccc71;
+  background-size: cover;
+}
+#mainDivPlayVideo #divForVideoAndDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 20px;
+}
+#mainDivPlayVideo #divForVideoAndDescription iframe {
+  width: 70vw;
+  height: 60vh;
+}
+#mainDivPlayVideo #divForVideoAndDescription h2 {
+  text-align: center;
+}
+#mainDivPlayVideo #divForVideoAndDescription #description {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+#mainDivPlayVideo #divForVideoAndDescription #moreOrLessTextBtn {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+#mainDivPlayVideo #mainSectionComments {
+  padding: 20px;
+  padding-bottom: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+#mainDivPlayVideo #mainSectionComments #divInputComment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#mainDivPlayVideo #mainSectionComments #divInputComment label {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+#mainDivPlayVideo #mainSectionComments #divInputComment input {
+  width: 50vw;
+  opacity: 0.5;
+  transition: 0.2s;
+  padding: 10px;
+}
+#mainDivPlayVideo #mainSectionComments #divInputComment input:focus {
+  opacity: 1;
+  transform: scale(1.2);
+}
+#mainDivPlayVideo #mainSectionComments #divInputComment button {
+  padding: 10px 40px;
+}
+#mainDivPlayVideo #mainSectionComments #allComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+#mainDivPlayVideo #mainSectionComments #allComments .oneComment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  gap: 20px;
+  padding: 10px;
+  border: 1.5px solid #333;
+  border-radius: 10px;
+}
+#mainDivPlayVideo #mainSectionComments #allComments .oneComment span {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+#mainDivPlayVideo #mainSectionComments #allComments .oneComment p {
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+#mainDivPlayVideo #mainSectionComments #allComments .oneComment .deleteComment {
+  padding: 8px 30px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+}
+#mainDivPlayVideo #mainSectionComments #allComments .oneComment .deleteComment:hover {
+  color: whitesmoke;
+  background-color: #333;
+}
+
+@media screen and (max-width: 800px) {
+  #mainDivPlayVideo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background-image: linear-gradient(to right top, #ffd4b2, #ffdab3, #ffe0b4, #ffe7b5, #ffedb8, #faefb9, #f6f2bc, #f1f4be, #e7f3c0, #def1c2, #d6efc4, #ceedc7);
+    background-color: #fccc71;
+    background-size: cover;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 20px;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription iframe {
+    width: 95vw;
+    height: 45vh;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription h2 {
+    text-align: center;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription #description {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription #moreOrLessTextBtn {
+    border: 1px solid black;
+    padding: 10px 20px;
+  }
+  #mainDivPlayVideo #mainSectionComments {
+    padding: 20px;
+    padding-bottom: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment label {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment input {
+    width: 50vw;
+    opacity: 0.5;
+    transition: 0.2s;
+    padding: 10px;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment input:focus {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment button {
+    padding: 10px 40px;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    gap: 20px;
+    padding: 10px;
+    border: 1.5px solid #333;
+    border-radius: 10px;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment span {
+    font-weight: bolder;
+    font-size: 2rem;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment p {
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment .deleteComment {
+    padding: 8px 30px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.2s;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment .deleteComment:hover {
+    color: whitesmoke;
+    background-color: #333;
+  }
+}
+@media screen and (max-width: 500px) {
+  #mainDivPlayVideo #divForVideoAndDescription {
+    gap: 40px;
+    padding: 100px 20px;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription iframe {
+    width: 95vw;
+    height: 35vh;
+  }
+  #mainDivPlayVideo #divForVideoAndDescription #description {
+    font-weight: 600;
+  }
+  #mainDivPlayVideo #mainSectionComments {
+    padding: 20px;
+    padding-bottom: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment label {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment input {
+    width: 50vw;
+    opacity: 0.5;
+    transition: 0.2s;
+    padding: 10px;
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment input:focus {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  #mainDivPlayVideo #mainSectionComments #divInputComment button {
+    padding: 10px 40px;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments {
+    gap: 40px;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment span {
+    font-size: 1.5rem;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment p {
+    font-size: 1.1rem;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+  #mainDivPlayVideo #mainSectionComments #allComments .oneComment .deleteComment {
+    border: 1px solid #333;
+  }
+}/*# sourceMappingURL=PlayVideo.css.map */

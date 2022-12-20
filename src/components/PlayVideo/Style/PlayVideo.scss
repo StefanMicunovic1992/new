@@ -1,0 +1,278 @@
+@import "../../../Mixin/Mixin.scss";
+
+#mainDivPlayVideo {
+  @include flex-centar-column();
+  overflow-x: hidden;
+  background-image: linear-gradient(
+    to right top,
+    #ffd4b2,
+    #ffdab3,
+    #ffe0b4,
+    #ffe7b5,
+    #ffedb8,
+    #faefb9,
+    #f6f2bc,
+    #f1f4be,
+    #e7f3c0,
+    #def1c2,
+    #d6efc4,
+    #ceedc7
+  );
+  background-color: #fccc71;
+  background-size: cover;
+  #divForVideoAndDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 20px;
+    iframe {
+      width: 70vw;
+      height: 60vh;
+    }
+    h2 {
+      text-align: center;
+    }
+    #description {
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    #moreOrLessTextBtn {
+      border: 1px solid black;
+      padding: 10px 20px;
+    }
+  }
+
+  #mainSectionComments {
+    padding: 20px;
+    padding-bottom: 50px;
+    width: 100vw;
+    @include flex-centar-column();
+    gap: 50px;
+    #divInputComment {
+      @include flex-centar-column();
+      gap: 10px;
+      label {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+      input {
+        width: 50vw;
+        opacity: 0.5;
+        transition: 0.2s;
+        padding: 10px;
+        &:focus {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+      button {
+        padding: 10px 40px;
+      }
+    }
+    #allComments {
+      @include flex-centar-column();
+      gap: 40px;
+      .oneComment {
+        @include flex-centar-column();
+        width: 80vw;
+        gap: 20px;
+        padding: 10px;
+        border: 1.5px solid #333;
+        border-radius: 10px;
+        span {
+          font-weight: bolder;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.5rem;
+          overflow-wrap: break-word;
+          text-align: center;
+        }
+        .deleteComment {
+          padding: 8px 30px;
+          border-radius: 5px;
+          border: none;
+          transition: 0.2s;
+          &:hover {
+            color: whitesmoke;
+            background-color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mainDivPlayVideo {
+    @include flex-centar-column();
+    overflow-x: hidden;
+    background-image: linear-gradient(
+      to right top,
+      #ffd4b2,
+      #ffdab3,
+      #ffe0b4,
+      #ffe7b5,
+      #ffedb8,
+      #faefb9,
+      #f6f2bc,
+      #f1f4be,
+      #e7f3c0,
+      #def1c2,
+      #d6efc4,
+      #ceedc7
+    );
+    background-color: #fccc71;
+    background-size: cover;
+    #divForVideoAndDescription {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      padding: 100px 20px;
+      iframe {
+        width: 95vw;
+        height: 45vh;
+      }
+      h2 {
+        text-align: center;
+      }
+      #description {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      #moreOrLessTextBtn {
+        border: 1px solid black;
+        padding: 10px 20px;
+      }
+    }
+
+    #mainSectionComments {
+      padding: 20px;
+      padding-bottom: 50px;
+      width: 100vw;
+      @include flex-centar-column();
+      gap: 50px;
+      #divInputComment {
+        @include flex-centar-column();
+        gap: 10px;
+        label {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+        input {
+          width: 50vw;
+          opacity: 0.5;
+          transition: 0.2s;
+          padding: 10px;
+          &:focus {
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
+        button {
+          padding: 10px 40px;
+        }
+      }
+      #allComments {
+        @include flex-centar-column();
+        gap: 40px;
+        .oneComment {
+          @include flex-centar-column();
+          width: 80vw;
+          gap: 20px;
+          padding: 10px;
+          border: 1.5px solid #333;
+          border-radius: 10px;
+          span {
+            font-weight: bolder;
+            font-size: 2rem;
+          }
+          p {
+            font-size: 1.5rem;
+            overflow-wrap: break-word;
+            text-align: center;
+          }
+          .deleteComment {
+            padding: 8px 30px;
+            border-radius: 5px;
+            border: none;
+            transition: 0.2s;
+            &:hover {
+              color: whitesmoke;
+              background-color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #mainDivPlayVideo {
+    #divForVideoAndDescription {
+      gap: 40px;
+      padding: 100px 20px;
+      iframe {
+        width: 95vw;
+        height: 35vh;
+      }
+      #description {
+        font-weight: 600;
+      }
+    }
+  
+    #mainSectionComments {
+      padding: 20px;
+      padding-bottom: 50px;
+      width: 100vw;
+      @include flex-centar-column();
+      gap: 50px;
+      #divInputComment {
+        @include flex-centar-column();
+        gap: 10px;
+        label {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+        input {
+          width: 50vw;
+          opacity: 0.5;
+          transition: 0.2s;
+          padding: 10px;
+          &:focus {
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
+        button {
+          padding: 10px 40px;
+        }
+      }
+      #allComments {
+        gap: 40px;
+        .oneComment {
+          span {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 1.1rem;
+            overflow-wrap: break-word;
+            text-align: center;
+          }
+          .deleteComment {
+            border: 1px solid #333;
+          }
+        }
+      }
+    }
+  }
+}

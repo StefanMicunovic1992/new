@@ -3,26 +3,3 @@
     margin: 0;
     padding: 0;
 }
-
-
-section{
-    width: 100vw;
-    height: 100vh;
-    background-image: url('/public/images/background.jpg');
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 20px;
-    width: 50%;
-    height: 30%;
-    color: #333;
-}

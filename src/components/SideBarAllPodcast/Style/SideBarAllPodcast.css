@@ -1,0 +1,66 @@
+#mainDivSideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+#mainDivSideBar .onePodcast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+#mainDivSideBar .onePodcast .imgOfPodcastSideBar {
+  width: 30%;
+  border-radius: 50%;
+}
+#mainDivSideBar .onePodcast .btnSideBar {
+  padding: 5px 20px;
+  transition: 0.3s;
+}
+#mainDivSideBar .onePodcast .btnSideBar:hover {
+  background-color: #333;
+  color: whitesmoke;
+}
+#mainDivSideBar .onePodcast .nameOfPodcast {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 1540px) {
+  #mainDivSideBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  #mainDivSideBar .onePodcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+  #mainDivSideBar .onePodcast .imgOfPodcastSideBar {
+    width: 30%;
+    border-radius: 50%;
+  }
+  #mainDivSideBar .onePodcast .btnSideBar {
+    padding: 5px 20px;
+    transition: 0.3s;
+  }
+  #mainDivSideBar .onePodcast .btnSideBar:hover {
+    background-color: #333;
+    color: whitesmoke;
+  }
+  #mainDivSideBar .onePodcast .nameOfPodcast {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}/*# sourceMappingURL=SideBarAllPodcast.css.map */

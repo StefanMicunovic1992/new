@@ -1,0 +1,119 @@
+#headerComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  width: 100vw;
+  height: 8vh;
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  background-color: rgba(100, 100, 100, 0.7);
+  z-index: 1;
+}
+#headerComponent #divForLogo {
+  padding: 10px;
+  width: 50%;
+}
+#headerComponent #divForLogo img {
+  width: 50%;
+}
+#headerComponent nav {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 30px;
+  gap: 30px;
+}
+#headerComponent nav a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: whitesmoke;
+  transition-duration: 0.5s;
+}
+#headerComponent nav a:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+#mobileMenuDiv {
+  display: none;
+}
+
+#divForMobileLink {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  #headerComponent {
+    display: none;
+  }
+  #mobileMenuDiv {
+    z-index: 1;
+    height: 8vh;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+    background-color: rgba(100, 100, 100, 0.7);
+    display: block;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #mobileMenuDiv #divForLogoMobileMenu {
+    width: 50%;
+  }
+  #mobileMenuDiv #divForLogoMobileMenu img {
+    width: 70%;
+  }
+  #mobileMenuDiv #moobileDivIcon {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+#divForMobileLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 100px;
+  gap: 50px;
+  background-color: #333;
+  z-index: 1;
+}
+#divForMobileLink #closeMenuIcon {
+  text-decoration: none;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-weight: 800;
+  transition: 0.2s;
+}
+#divForMobileLink #closeMenuIcon:hover {
+  transform: scale(1.2);
+}
+#divForMobileLink a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-weight: 800;
+  transition: 0.2s;
+}
+#divForMobileLink a:hover {
+  transform: scale(1.2);
+}/*# sourceMappingURL=Navigation.css.map */

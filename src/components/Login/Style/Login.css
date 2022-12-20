@@ -1,0 +1,126 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#loginSection {
+  background-image: url("/public/images/background.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loginSection div {
+  background-color: rgba(100, 100, 100, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+  padding: 20px;
+}
+#loginSection div #formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#loginSection div #formLogin p {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: whitesmoke;
+  text-align: center;
+}
+#loginSection div #formLogin input[type=text], #loginSection div #formLogin input[type=password] {
+  width: 300px;
+  height: 30px;
+  padding-left: 10px;
+  transition: 0.3s;
+  outline: none;
+}
+#loginSection div #formLogin input[type=text]:focus, #loginSection div #formLogin input[type=password]:focus {
+  transform: scale(1.1);
+}
+#loginSection div #formLogin input[type=submit] {
+  background: transparent;
+  width: 200px;
+  height: 40px;
+  transition: 0.3s;
+}
+#loginSection div #formLogin input[type=submit]:hover {
+  transform: scale(1.3);
+}
+#loginSection div #formLogin a {
+  padding: 10px 80px;
+  text-align: center;
+  border: 2px solid black;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  transition: 0.3s;
+}
+#loginSection div #formLogin a:hover {
+  transform: scale(1.3);
+}
+
+@media screen and (max-width: 1540px) {
+  #loginSection div {
+    height: 60%;
+  }
+  #loginSection div #formLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  #loginSection div #formLogin p {
+    font-size: 1.3rem;
+  }
+  #loginSection div #formLogin input[type=submit] {
+    background: transparent;
+    width: 200px;
+    height: 30px;
+  }
+  #loginSection div #formLogin a {
+    padding: 5px 70px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #loginSection {
+    background-image: url("/public/images/background.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+  #loginSection div {
+    width: 80%;
+    height: 60%;
+    padding: 15px;
+  }
+  #loginSection div #formLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  #loginSection div #formLogin p {
+    font-size: 1.2rem;
+  }
+  #loginSection div #formLogin input[type=submit] {
+    height: 35px;
+    color: black;
+  }
+  #loginSection div #formLogin a {
+    padding: 8px 80px;
+    border: 2px solid black;
+    color: black;
+    transition: 0.3s;
+  }
+}/*# sourceMappingURL=Login.css.map */

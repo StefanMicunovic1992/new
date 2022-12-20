@@ -1,0 +1,123 @@
+#mainDivAccountPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/public/images/2.png");
+  gap: 200px;
+  width: 100vw;
+  height: 100vh;
+  padding: 100px 20px;
+}
+#mainDivAccountPage #dataOfUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 50vw;
+  height: 50vh;
+}
+#mainDivAccountPage #dataOfUser P {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+#mainDivAccountPage #dataOfUser .inputAccountPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+}
+#mainDivAccountPage #dataOfUser .inputAccountPage label {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+#mainDivAccountPage #dataOfUser .inputAccountPage input {
+  width: 400px;
+  height: 30px;
+  padding: 10px;
+  transition: 0.3s;
+}
+#mainDivAccountPage #dataOfUser .inputAccountPage input:focus {
+  transform: scale(1.2);
+}
+#mainDivAccountPage #dataOfUser #saveChanges {
+  padding: 10px 40px;
+  transition: 0.2s;
+  border-radius: 5px;
+  border: none;
+}
+#mainDivAccountPage #dataOfUser #saveChanges:hover {
+  background-color: #333;
+  color: whitesmoke;
+}
+#mainDivAccountPage #btnForLoginDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+}
+#mainDivAccountPage #btnForLoginDelete #logoutBtn {
+  width: 250px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+#mainDivAccountPage #btnForLoginDelete #logoutBtn:hover {
+  transform: scale(1.2);
+}
+#mainDivAccountPage #btnForLoginDelete #deleteAccoutBtn {
+  width: 250px;
+  background-color: red;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+#mainDivAccountPage #btnForLoginDelete #deleteAccoutBtn:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1540px) {
+  #mainDivAccountPage {
+    gap: 50px;
+    background-size: cover;
+  }
+  #mainDivAccountPage #dataOfUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  #mainDivAccountPage #dataOfUser P {
+    font-size: 1.4rem;
+  }
+  #mainDivAccountPage #btnForLoginDelete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+  }
+  #mainDivAccountPage #btnForLoginDelete #logoutBtn {
+    width: 200px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+  }
+  #mainDivAccountPage #btnForLoginDelete #logoutBtn:hover {
+    transform: scale(1.2);
+  }
+  #mainDivAccountPage #btnForLoginDelete #deleteAccoutBtn {
+    width: 200px;
+    padding: 10px 30px;
+  }
+}/*# sourceMappingURL=YourAccount.css.map */

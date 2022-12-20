@@ -1,0 +1,49 @@
+#mainDivHomePage {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
+  grid-template-areas: "nav nav nav nav" "side main main main" "side main main main" "side main main main" "side main main main";
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-image: url("/public/images/1.jpg");
+  background-size: cover;
+}
+#mainDivHomePage #navigation {
+  grid-area: nav;
+}
+#mainDivHomePage #sideBar {
+  grid-area: side;
+  overflow-y: scroll;
+  width: 15vw;
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+#mainDivHomePage #sideBar::-webkit-scrollbar {
+  width: 2px;
+}
+#mainDivHomePage #mainDiv {
+  grid-area: main;
+  width: 85vw;
+  height: 100vh;
+  overflow: scroll;
+}
+#mainDivHomePage #mainDiv::-webkit-scrollbar {
+  width: 2px;
+}
+
+@media (max-width: 500px) {
+  #mainDivHomePage {
+    background-position: 40%;
+  }
+  #mainDivHomePage #sideBar {
+    grid-area: side;
+    overflow-y: scroll;
+    width: 20vw;
+  }
+  #mainDivHomePage #mainDiv {
+    grid-area: main;
+    width: 80vw;
+  }
+}/*# sourceMappingURL=HomePage.css.map */

@@ -1,0 +1,65 @@
+@import "../../../Mixin/Mixin.scss";
+
+#mainSectionComments{
+    padding: 20px;
+    padding-bottom: 50px;
+    width: 100vw;
+    @include flex-centar-column();
+    gap: 50px;
+    #divInputComment{
+        @include flex-centar-column();
+        gap: 10px;
+        label{
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        input{
+            width: 50vw;
+            opacity: 0.5;
+            transition: 0.2s;
+            padding: 10px;
+            &:focus{
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        button{
+            padding: 10px 40px;
+        }
+    }
+    #allComments{
+        @include flex-centar-column();
+        gap: 40px;
+        .oneComment{
+            @include flex-centar-column();
+            width: 80vw;
+            gap: 20px;
+            padding: 10px;
+            border: 1.5px solid #333;
+            border-radius: 10px;
+            span{
+                font-weight: bolder;
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.5rem;
+                overflow-wrap: break-word;
+                text-align: center;
+            }
+            .deleteComment{
+                padding: 8px 30px;
+                border-radius: 5px;
+                border: none;
+                transition: 0.2s;
+                &:hover{
+                    color: whitesmoke;
+                    background-color: #333;
+                }
+            }
+        }
+        #noComments{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}

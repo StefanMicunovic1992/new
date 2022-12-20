@@ -1,0 +1,14 @@
+#messageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  height: 90vh;
+  overflow: hidden;
+}
+#messageSection p {
+  padding: 15px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}/*# sourceMappingURL=ComponentForhHelloMesage.css.map */

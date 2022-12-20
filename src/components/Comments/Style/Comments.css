@@ -1,0 +1,75 @@
+#mainSectionComments {
+  padding: 20px;
+  padding-bottom: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+#mainSectionComments #divInputComment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#mainSectionComments #divInputComment label {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+#mainSectionComments #divInputComment input {
+  width: 50vw;
+  opacity: 0.5;
+  transition: 0.2s;
+  padding: 10px;
+}
+#mainSectionComments #divInputComment input:focus {
+  opacity: 1;
+  transform: scale(1.2);
+}
+#mainSectionComments #divInputComment button {
+  padding: 10px 40px;
+}
+#mainSectionComments #allComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+#mainSectionComments #allComments .oneComment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  gap: 20px;
+  padding: 10px;
+  border: 1.5px solid #333;
+  border-radius: 10px;
+}
+#mainSectionComments #allComments .oneComment span {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+#mainSectionComments #allComments .oneComment p {
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+#mainSectionComments #allComments .oneComment .deleteComment {
+  padding: 8px 30px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+}
+#mainSectionComments #allComments .oneComment .deleteComment:hover {
+  color: whitesmoke;
+  background-color: #333;
+}
+#mainSectionComments #allComments #noComments {
+  font-size: 2rem;
+  font-weight: bold;
+}/*# sourceMappingURL=Comments.css.map */

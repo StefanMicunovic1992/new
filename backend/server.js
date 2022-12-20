@@ -6,8 +6,10 @@ const routesURL = require('./routes/routes')
 const cors = require('cors')
 
 dotenv.config()
+mongoose.connect(process.env.DATABASE_ACCESS)
+    .then(()=>console.log('connection successfull on database'))
+    .catch((error) => console.log(error))
 
-mongoose.connect(process.env.DATABASE_ACCESS, () => console.log('database working'))
 app.use(express.json())
 app.use(cors());
 app.use('/app', routesURL)

@@ -1,0 +1,14 @@
+@import "../../../Mixin/Mixin.scss";
+
+#messageSection{
+    @include flex-centar-row();
+    width: 85vw;
+    height: 90vh;
+    overflow: hidden;
+    p{
+        padding: 15px;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+}
