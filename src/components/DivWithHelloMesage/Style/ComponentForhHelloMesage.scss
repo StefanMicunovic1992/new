@@ -14,7 +14,7 @@
         text-align: center;
     }
     .line-1{ 
-        width: 20em;
+        width: 22em;
         border-right: 2px solid rgba(255,255,255,.75);
         white-space: nowrap;
         overflow: hidden;
@@ -28,7 +28,7 @@
     }
     @keyframes typewriter{
       from{width: 0;}
-      to{width: 20em;}
+      to{width: 22em;}
     }
     @keyframes blinkTextCursor{
       from{border-right-color: rgba(255,255,255,.75);}

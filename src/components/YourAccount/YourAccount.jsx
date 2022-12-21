@@ -21,8 +21,10 @@ function YourAccount() {
         .post("/app/checkCookie", cookieSend)
         .then((res) => checkRes(res));
 
-      function checkRes(res) {
-        if (res.data[0].msg !== "OK") {
+        async function checkRes(res) {
+        console.log(res.status)
+        if (res.status != 201) {
+          Cookies.remove("loginCookie");
           history("/");
         } else {
           dispatch(setCurrentUser(res.data[1]));
@@ -36,7 +38,6 @@ function YourAccount() {
 
   const deleteCookieAndLogout = () => {
     const getCookie = Cookies.get("loginCookie");
-    console.log(getCookie);
     Cookies.remove("loginCookie");
     history("/");
   };

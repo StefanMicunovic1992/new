@@ -11,7 +11,7 @@ function ComponentForhHelloMesage(){
 
     return(
         <section id="messageSection">
-            <p id="message" className="line-1 anim-typewriter">Welcome to TOP PODCAST <span>{currentUser.username}</span>. Enjoy</p>
+            <p id="message" className="line-1 anim-typewriter">Welcome to THE BEST PODCAST <span>{currentUser.username}</span>. Enjoy</p>
         </section>
     )
 }

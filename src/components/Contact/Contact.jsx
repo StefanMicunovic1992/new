@@ -28,8 +28,9 @@ function Contact() {
         .post("/app/checkCookie", cookieSend)
         .then((res) => checkRes(res));
 
-      function checkRes(res) {
-        if (res.data[0].msg !== "OK") {
+        async function checkRes(res) {
+        if (res.status != 201) {
+          Cookies.remove("loginCookie");
           history("/");
         } else {
           dispatch(setCurrentUser(res.data[1]));
@@ -38,7 +39,6 @@ function Contact() {
     } else {
       history("/");
     }
-
   }, []);
 
   const checkName = (e) => {
@@ -91,10 +91,10 @@ function Contact() {
       }
 
       axios.post('/app/sendmessage', messageData)
-                .then(res => checkResponse(res.statusText))
+                .then(res => checkResponse(res))
 
       const checkResponse = (response) =>{
-        if(response=='OK'){
+        if(response.status==200){
           setName(undefined)
           setSurname(undefined)
           setEmail(undefined)
@@ -113,7 +113,6 @@ function Contact() {
           })
         }
       }
-
     }else{
           const message = document.getElementById('msg')
           message.classList.remove('msgSuccessfullySend')

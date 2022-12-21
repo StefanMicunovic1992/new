@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../store/currentUserSlice";
+import useCookieFnc from "../../helper/checkCookie";
 
 
 function Administrator() {
@@ -27,10 +28,14 @@ function Administrator() {
         .post("/app/checkCookie", cookieSend)
         .then((res) => checkRes(res));
 
-      function checkRes(res) {
-        if (res.data[0].msg !== "OK") {
+        async function checkRes(res) {
+        console.log(res.status)
+        if (res.status != 201) {
+          Cookies.remove("loginCookie");
           history("/");
-        } else {
+        } else if(res.data[1].administrator == 0){
+          history("/home_page");
+        }else{
           dispatch(setCurrentUser(res.data[1]));
         }
       }

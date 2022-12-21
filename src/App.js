@@ -8,6 +8,8 @@ import YourAccount from './components/YourAccount/YourAccount';
 import Administrator from './components/Administrator/Administrator';
 import PlayVideo from './components/PlayVideo/PlayVideo';
 import Contact from './components/Contact/Contact';
+import useCookieFnc from './helper/checkCookie';
+
 
 
 

@@ -12,8 +12,6 @@ function Comments() {
 
 const addComent = () =>{
     const comment = document.getElementById('comment');
-    
-
     if(comment.value){
         const commentData = {
             comment: comment.value,

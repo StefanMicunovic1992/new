@@ -111,6 +111,11 @@
   justify-content: center;
   align-items: center;
 }
+#divForBtn #msg {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 
 #sendMessageBtn {
   padding: 10px 25px;

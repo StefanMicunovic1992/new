@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "../../Axios-API/Axios";
 import Cookies from 'js-cookie';
-import Login from '../Login/Login';
-
+import { setCurrentUser } from "../../store/currentUserSlice";
+import { useDispatch } from 'react-redux';
 
 
 function Registar() {
@@ -13,24 +13,28 @@ function Registar() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const isCookie = Cookies.get('loginCookie')
+    const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
-        console.log(isCookie);
-        let cookieSend = { isCookie }
-        const result = axios.post('/app/checkCookie', cookieSend)
-            .then(res => checkRes(res))
-            .catch(error=>console.log(error))
+      let cookieSend = { isCookie };
+      const result = axios
+        .post("/app/checkCookie", cookieSend)
+        .then((res) => checkRes(res));
 
-        function checkRes(res) {
-          console.log(res)
-            if(res.data.msg == 'OK'){
-                history('/home_page')
-            }
+        async function checkRes(res) {
+        console.log(res.status)
+        if (res.status != 201) {
+          Cookies.remove("loginCookie");
+          history("/");
+        } else {
+          dispatch(setCurrentUser(res.data[1]));
+          history("/home_page");
         }
+      }
     }
-});
+  }, []);
   
   function sendRegistrationForm(e) {
     e.preventDefault()

@@ -20,18 +20,23 @@ function Login() {
     if (isCookie) {
       let cookieSend = { isCookie };
       const result = axios
-        .post("app/checkCookie", cookieSend)
+        .post("/app/checkCookie", cookieSend)
         .then((res) => checkRes(res));
 
-      function checkRes(res) {
-        console.log(res.data[1].administrator);
-        if (res.data[0].msg == "OK") {
-          dispatch(setCurrentUser(res.data[1].administrator));
+        async function checkRes(res) {
+        console.log(res.status)
+        if (res.status != 201) {
+          Cookies.remove("loginCookie");
+          history("/");
+        } else {
+          dispatch(setCurrentUser(res.data[1]));
           history("/home_page");
         }
       }
+    } else {
+      history("/");
     }
-  });
+  }, []);
 
   const sendLoginData = async (e) => {
     e.preventDefault();

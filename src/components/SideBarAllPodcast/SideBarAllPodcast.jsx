@@ -40,24 +40,25 @@ function SideBarAllPodcast() {
   };
 
   useEffect(() => {
-    const isCookie = Cookies.get("loginCookie");
-    if (isCookie) {
-      let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
-
-      function checkRes(res) {
-        if (res.data[0].msg !== "OK") {
-          history("/");
-        } else {
-          console.log(res.data);
-          dispatch(setCurrentUser(res.data[1]));
+      const isCookie = Cookies.get("loginCookie");
+      if (isCookie) {
+        let cookieSend = { isCookie };
+        const result = axios
+          .post("/app/checkCookie", cookieSend)
+          .then((res) => checkRes(res));
+  
+          async function checkRes(res) {
+          console.log(res.status)
+          if (res.status !== 201) {
+            Cookies.remove("loginCookie");
+            history("/");
+          } else {
+            dispatch(setCurrentUser(res.data[1]));
+          }
         }
+      } else {
+        history("/");
       }
-    } else {
-      history("/");
-    }
 
     getAllPodcastFromDatabase();
   }, []);
@@ -73,8 +74,6 @@ function SideBarAllPodcast() {
   };
 
   return (
-  <>
-      {/* <button id="showPodcast">Show all podcast</button> */}
     <section id="mainDivSideBar">
       {podcast?.map((elem) => (
         <article key={elem.id} className="onePodcast">
@@ -94,7 +93,6 @@ function SideBarAllPodcast() {
         </article>
       ))}
     </section>
-    </>
   );
 }
 
