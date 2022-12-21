@@ -5,6 +5,9 @@ const dotenv = require('dotenv')
 const routesURL = require('./routes/routes')
 const cors = require('cors')
 
+const port = process.env.PORT || 5000;
+
+
 dotenv.config()
 mongoose.connect(process.env.DATABASE_ACCESS)
     .then(()=>console.log('connection successfull on database'))
@@ -15,5 +18,4 @@ app.use(cors());
 app.use('/app', routesURL)
 
 
-
-app.listen(5000, () => console.log('server working'))
+app.listen(port, () => console.log('server working'))
