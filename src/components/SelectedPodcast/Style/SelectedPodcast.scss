@@ -228,6 +228,8 @@
         gap: 50px;
         .oneCurrentPodcast {
           @include flex-centar-column();
+          height: auto;
+          padding: 20px 5px;
           width: 80%;
           gap: 20px;
           img{
