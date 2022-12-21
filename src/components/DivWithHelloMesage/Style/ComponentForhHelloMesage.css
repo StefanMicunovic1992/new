@@ -2,13 +2,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 200px;
   width: 85vw;
   height: 90vh;
   overflow: hidden;
+  /* Animation */
 }
 #messageSection p {
+  width: 100%;
   padding: 15px;
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
+}
+#messageSection .line-1 {
+  width: 20em;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+#messageSection .anim-typewriter {
+  -webkit-animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+          animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+}
+@-webkit-keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20em;
+  }
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20em;
+  }
+}
+@-webkit-keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }/*# sourceMappingURL=ComponentForhHelloMesage.css.map */

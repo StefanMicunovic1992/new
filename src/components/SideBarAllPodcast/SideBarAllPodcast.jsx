@@ -73,6 +73,8 @@ function SideBarAllPodcast() {
   };
 
   return (
+  <>
+      {/* <button id="showPodcast">Show all podcast</button> */}
     <section id="mainDivSideBar">
       {podcast?.map((elem) => (
         <article key={elem.id} className="onePodcast">
@@ -92,6 +94,7 @@ function SideBarAllPodcast() {
         </article>
       ))}
     </section>
+    </>
   );
 }
 

@@ -8,12 +8,12 @@
   align-items: center;
 }
 #registarSection div {
-  background-color: rgba(100, 100, 100, 0.6);
+  background-color: rgba(100, 100, 100, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 70%;
   border-radius: 20px;
   padding: 20px;
 }
@@ -24,43 +24,96 @@
   align-items: center;
   gap: 30px;
 }
-#registarSection div #registarForm p {
-  font-size: 1.8rem;
-  font-weight: bolder;
+#registarSection div #registarForm #firstMsg {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
   color: whitesmoke;
 }
-#registarSection div #registarForm input[type=text],
-#registarSection div #registarForm input[type=password] {
+#registarSection div #registarForm #usernameArticle, #registarSection div #registarForm #emailArticle, #registarSection div #registarForm #passArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+#registarSection div #registarForm #usernameArticle input, #registarSection div #registarForm #emailArticle input, #registarSection div #registarForm #passArticle input {
   width: 300px;
   height: 30px;
   padding-left: 10px;
-  transition: 0.3s;
-  outline: none;
+  transition: 0.2s;
 }
-#registarSection div #registarForm input[type=text]:focus,
-#registarSection div #registarForm input[type=password]:focus {
+#registarSection div #registarForm #usernameArticle input:focus, #registarSection div #registarForm #emailArticle input:focus, #registarSection div #registarForm #passArticle input:focus {
   transform: scale(1.1);
 }
-#registarSection div #registarForm input[type=submit] {
-  background: transparent;
-  width: 200px;
-  height: 40px;
-  transition: 0.3s;
+#registarSection div #registarForm #usernameArticle p, #registarSection div #registarForm #emailArticle p, #registarSection div #registarForm #passArticle p {
+  height: 20px;
+  width: 60vw;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
 }
-#registarSection div #registarForm input[type=submit]:hover {
-  transform: scale(1.3);
+#registarSection div #registarForm #submitArticle #btnSubmit {
+  padding: 10px 40px;
+  background: transparent;
+  font-weight: bold;
+  border: 2px solid black;
+  transition: 0.2s;
+}
+#registarSection div #registarForm #submitArticle #btnSubmit:hover {
+  transform: scale(1.1);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   #registarSection {
     background-position: 50%;
   }
   #registarSection div {
-    background-color: rgba(100, 100, 100, 0.6);
-    width: 85%;
-    height: 60%;
+    width: 80%;
+    height: 70%;
   }
-  #registarSection div #registarForm p {
-    font-size: 1.6rem;
+  #registarSection div #registarForm {
+    gap: 80px;
+  }
+  #registarSection div #registarForm #usernameArticle, #registarSection div #registarForm #emailArticle, #registarSection div #registarForm #passArticle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  #registarSection div #registarForm #usernameArticle input, #registarSection div #registarForm #emailArticle input, #registarSection div #registarForm #passArticle input {
+    width: 350px;
+  }
+  #registarSection div #registarForm #usernameArticle p, #registarSection div #registarForm #emailArticle p, #registarSection div #registarForm #passArticle p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #registarSection div {
+    width: 80%;
+    height: 80%;
+    padding: 5px;
+  }
+  #registarSection div #registarForm {
+    gap: 20px;
+  }
+  #registarSection div #registarForm #firstMsg {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  #registarSection div #registarForm #usernameArticle input, #registarSection div #registarForm #emailArticle input, #registarSection div #registarForm #passArticle input {
+    width: 250px;
+  }
+  #registarSection div #registarForm #usernameArticle p, #registarSection div #registarForm #emailArticle p, #registarSection div #registarForm #passArticle p {
+    width: 80vw;
+    font-size: 1rem;
+  }
+  #registarSection div #registarForm #submitArticle #btnSubmit {
+    margin-top: 80px;
+    padding: 10px 40px;
   }
 }/*# sourceMappingURL=Registar.css.map */

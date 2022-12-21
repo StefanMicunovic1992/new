@@ -33,6 +33,11 @@
   width: 2px;
 }
 
+@media (max-width: 800px) {
+  #mainDivHomePage {
+    background-position: 40%;
+  }
+}
 @media (max-width: 500px) {
   #mainDivHomePage {
     background-position: 40%;

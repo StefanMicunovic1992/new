@@ -83,7 +83,8 @@
   }
 }
 #divForMobileLink {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   display: none;
@@ -95,19 +96,85 @@
   padding: 100px;
   gap: 50px;
   background-color: #333;
-  z-index: 1;
 }
 #divForMobileLink #closeMenuIcon {
   text-decoration: none;
   font-size: 2rem;
   color: whitesmoke;
   font-weight: 800;
-  transition: 0.2s;
 }
 #divForMobileLink #closeMenuIcon:hover {
   transform: scale(1.2);
 }
 #divForMobileLink a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-weight: 800;
+  transition: 0.2s;
+}
+#divForMobileLink a:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 500px) {
+  #mobileMenuDiv {
+    z-index: 1;
+    height: 8vh;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+    background-color: rgba(100, 100, 100, 0.7);
+    display: block;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #mobileMenuDiv #divForLogoMobileMenu {
+    width: 50%;
+  }
+  #mobileMenuDiv #divForLogoMobileMenu img {
+    width: 70%;
+  }
+  #mobileMenuDiv #moobileDivIcon {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+#divForMobileLink {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 100px;
+  gap: 50px;
+  background-color: #333;
+}
+#divForMobileLink #closeMenuIcon {
+  text-decoration: none;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-weight: 800;
+}
+#divForMobileLink #closeMenuIcon:hover {
+  transform: scale(1.2);
+}
+#divForMobileLink a {
+  width: 80vw;
+  text-align: center;
   text-decoration: none;
   font-size: 2rem;
   color: whitesmoke;

@@ -270,6 +270,7 @@
 }
 @media screen and (max-width: 800px) {
   #mainDivContact {
+    padding: 40px 20px;
     width: 100vw;
     height: 100vh;
   }
@@ -280,6 +281,7 @@
     font-size: 1.6rem;
   }
   #mainDivContact #contactDiv .oneInput {
+    width: 80%;
     margin-bottom: 20px;
   }
   #mainDivContact #contactDiv .oneInput .labelInputIconDiv {
@@ -288,5 +290,41 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #mainDivContact {
+    padding: 40px 20px;
+    width: 100vw;
+  }
+  #mainDivContact #contactDescription {
+    padding: 50px 10px;
+  }
+  #mainDivContact #contactDescription h2 {
+    font-size: 1.3rem;
+  }
+  #mainDivContact #contactDescription p {
+    width: 90vw;
+    font-size: 1.1rem;
+  }
+  #mainDivContact #contactDiv .oneInput {
+    width: 95vw;
+    margin-bottom: 10px;
+  }
+  #mainDivContact #contactDiv .oneInput .labelInputIconDiv {
+    width: 100%;
+    gap: 10px;
+  }
+  #mainDivContact #contactDiv .oneInput .labelInputIconDiv label {
+    width: 20vw;
+  }
+  #mainDivContact #contactDiv .oneInput .labelInputIconDiv input {
+    width: 70%;
+  }
+  #mainDivContact #contactDiv .oneInput textarea {
+    max-width: 90vw;
+    min-width: 90vw;
+    max-height: 25vh;
+    min-height: 25vh;
   }
 }/*# sourceMappingURL=Contact.css.map */

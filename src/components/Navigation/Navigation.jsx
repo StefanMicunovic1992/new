@@ -17,6 +17,11 @@ function Navigation() {
     divForMobileLink.style.display = 'none'
   }
 
+  const closeMenuLink = () =>{
+    const divForMobileLink = document.getElementById('divForMobileLink');
+    divForMobileLink.style.display = 'none'
+  }
+
   return (
     <>
       <header id="headerComponent">
@@ -52,11 +57,11 @@ function Navigation() {
       </div>
       <div id="divForMobileLink">
         <FontAwesomeIcon icon={faXmark} id='closeMenuIcon' onClick={closeMobileMenu}></FontAwesomeIcon>
-          <NavLink to="/home_page">Home</NavLink>
-          <NavLink to="/your_account">Your account</NavLink>
-          <NavLink to="/contact">Contact us</NavLink>
+          <NavLink to="/home_page" onClick={closeMenuLink}>Home</NavLink>
+          <NavLink to="/your_account" onClick={closeMenuLink}>Your account</NavLink>
+          <NavLink to="/contact" onClick={closeMenuLink}>Contact us</NavLink>
           {currentUser.administrator > 0 ? (
-            <NavLink to="/Administrator">Administrator</NavLink>
+            <NavLink to="/Administrator" onClick={closeMenuLink}>Administrator</NavLink>
           ) : (
             ""
           )}

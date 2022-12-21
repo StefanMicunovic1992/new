@@ -2,13 +2,36 @@
 
 #messageSection{
     @include flex-centar-row();
+    padding-top: 200px;
     width: 85vw;
     height: 90vh;
     overflow: hidden;
     p{
+        width: 100%;
         padding: 15px;
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
+    }
+    .line-1{ 
+        width: 20em;
+        border-right: 2px solid rgba(255,255,255,.75);
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);    
+    }
+    
+    /* Animation */
+    .anim-typewriter{
+      animation: typewriter 4s steps(40) 1s 1 normal both,
+                 blinkTextCursor 500ms steps(40) infinite normal;
+    }
+    @keyframes typewriter{
+      from{width: 0;}
+      to{width: 20em;}
+    }
+    @keyframes blinkTextCursor{
+      from{border-right-color: rgba(255,255,255,.75);}
+      to{border-right-color: transparent;}
     }
 }

@@ -276,6 +276,7 @@
 
 @media screen and (max-width: 800px) {
   #mainDivContact {
+    padding: 40px 20px;
     width: 100vw;
     height: 100vh;
     #contactDescription {
@@ -286,11 +287,52 @@
     }
     #contactDiv {
       .oneInput {
+        width: 80%;
         margin-bottom: 20px;
         .labelInputIconDiv {
           width: 100%;
           @include flex-centar-row();
           gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #mainDivContact {
+    padding: 40px 20px;
+    width: 100vw;
+    // height: 100vh;
+    #contactDescription {
+      padding: 50px 10px;
+      h2 {
+        font-size: 1.3rem;
+      }
+      p {
+        width: 90vw;
+        font-size: 1.1rem;
+      }
+    }
+    #contactDiv {
+      .oneInput {
+        width: 95vw;
+        margin-bottom: 10px;
+        .labelInputIconDiv {
+          width: 100%;
+          gap: 10px;
+          label {
+            width: 20vw;
+          }
+          input {
+            width: 70%;
+          }
+        }
+        textarea {
+          max-width: 90vw;
+          min-width: 90vw;
+          max-height: 25vh;
+          min-height: 25vh;
         }
       }
     }

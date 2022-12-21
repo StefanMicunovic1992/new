@@ -3,6 +3,7 @@
 #mainDivPlayVideo {
   @include flex-centar-column();
   overflow-x: hidden;
+  overflow-y: scroll;
   background-image: linear-gradient(
     to right top,
     #ffd4b2,
@@ -227,6 +228,10 @@
       }
       #description {
         font-weight: 600;
+        width: 100vw;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0px 10px;
       }
     }
   
@@ -244,7 +249,7 @@
           font-size: 1.5rem;
         }
         input {
-          width: 50vw;
+          width: 80vw;
           opacity: 0.5;
           transition: 0.2s;
           padding: 10px;

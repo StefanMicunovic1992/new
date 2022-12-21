@@ -120,4 +120,48 @@
     width: 200px;
     padding: 10px 30px;
   }
+}
+@media screen and (max-width: 500px) {
+  #mainDivAccountPage {
+    padding-top: 200px;
+  }
+  #mainDivAccountPage #dataOfUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+  }
+  #mainDivAccountPage #dataOfUser P {
+    width: 90vw;
+    font-size: 1.2rem;
+  }
+  #mainDivAccountPage #dataOfUser .inputAccountPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+  }
+  #mainDivAccountPage #dataOfUser .inputAccountPage input {
+    width: 300px;
+  }
+  #mainDivAccountPage #btnForLoginDelete {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+  #mainDivAccountPage #btnForLoginDelete #logoutBtn {
+    width: 250px;
+  }
+  #mainDivAccountPage #btnForLoginDelete #deleteAccoutBtn {
+    width: 250px;
+    background-color: red;
+  }
 }/*# sourceMappingURL=YourAccount.css.map */
