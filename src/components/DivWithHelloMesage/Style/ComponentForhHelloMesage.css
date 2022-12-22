@@ -57,4 +57,74 @@
   to {
     border-right-color: transparent;
   }
+}
+
+@media screen and (max-width: 800px) {
+  #messageSection p {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #messageSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    width: 85vw;
+  }
+  #messageSection p {
+    width: 100%;
+    position: relative;
+    left: -10px;
+    padding: 15px 0px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  #messageSection p span {
+    text-transform: uppercase;
+  }
+  .line-1 {
+    width: 22em;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  .anim-typewriter {
+    -webkit-animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+            animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+  }
+  @-webkit-keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 22em;
+    }
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 22em;
+    }
+  }
+  @-webkit-keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
 }/*# sourceMappingURL=ComponentForhHelloMesage.css.map */

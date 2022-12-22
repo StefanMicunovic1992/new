@@ -234,9 +234,9 @@
 }
 @media (max-width: 500px) {
   #mainSectionSelectedPodcast {
-    width: 85vw;
+    width: 100%;
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     overflow-x: scroll;
     gap: 50px;
   }
@@ -248,7 +248,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px 30px;
+    width: 100%;
+    padding: 0px 0px;
     gap: 30px;
   }
   #mainSectionSelectedPodcast #dataAboutPodcast img {
@@ -260,10 +261,12 @@
     font-size: 1.3rem;
   }
   #mainSectionSelectedPodcast #dataAboutPodcast p {
-    font-size: 1rem;
-    font-weight: 700;
+    word-wrap: break-word;
+    font-size: 1.1rem;
+    font-weight: bold;
     text-align: center;
-    padding: 0;
+    width: 100%;
+    padding: 0px 20px;
   }
   #mainSectionSelectedPodcast #currentPodcastDiv {
     display: flex;
@@ -302,7 +305,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0px;
+    padding: 50px 0px 20px 0px;
     width: 100%;
     gap: 20px;
   }

@@ -1,37 +1,100 @@
 @import "../../../Mixin/Mixin.scss";
 
-#messageSection{
-    @include flex-centar-row();
-    padding-top: 200px;
-    width: 85vw;
-    height: 90vh;
+#messageSection {
+  @include flex-centar-row();
+  padding-top: 200px;
+  width: 85vw;
+  height: 90vh;
+  overflow: hidden;
+  p {
+    width: 100%;
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .line-1 {
+    width: 22em;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
     overflow: hidden;
-    p{
-        width: 100%;
-        padding: 15px;
-        font-size: 2rem;
-        font-weight: 700;
-        text-align: center;
+    transform: translateY(-50%);
+  }
+
+  /* Animation */
+  .anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+      blinkTextCursor 500ms steps(40) infinite normal;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
     }
-    .line-1{ 
-        width: 22em;
-        border-right: 2px solid rgba(255,255,255,.75);
-        white-space: nowrap;
-        overflow: hidden;
-        transform: translateY(-50%);    
+    to {
+      width: 22em;
     }
-    
-    /* Animation */
-    .anim-typewriter{
-      animation: typewriter 4s steps(40) 1s 1 normal both,
-                 blinkTextCursor 500ms steps(40) infinite normal;
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
     }
-    @keyframes typewriter{
-      from{width: 0;}
-      to{width: 22em;}
+    to {
+      border-right-color: transparent;
     }
-    @keyframes blinkTextCursor{
-      from{border-right-color: rgba(255,255,255,.75);}
-      to{border-right-color: transparent;}
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #messageSection {
+    p {
+      font-size: 1.5rem;
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #messageSection {
+    @include flex-centar-row();
+    padding-top: 100px;
+    width: 85vw;
+    p {
+      width: 100%;
+      position: relative;
+      left: -10px;
+      padding: 15px 0px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-align: center;
+      span{
+        text-transform: uppercase;
+      }
+    }
+  }
+  .line-1 {
+    width: 22em;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  .anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+      blinkTextCursor 500ms steps(40) infinite normal;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 22em;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
 }

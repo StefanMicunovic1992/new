@@ -194,9 +194,9 @@
 
 @media (max-width: 500px) {
   #mainSectionSelectedPodcast {
-    width: 85vw;
+    width: 100%;
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     overflow-x: scroll;
     gap: 50px;
     &::-webkit-scrollbar {
@@ -204,7 +204,8 @@
     }
     #dataAboutPodcast {
       @include flex-centar-column();
-      padding: 0px 30px;
+      width: 100%;
+      padding: 0px 0px;
       gap: 30px;
       img {
         width: 50%;
@@ -215,10 +216,12 @@
         font-size: 1.3rem;
       }
       p {
-        font-size: 1rem;
-        font-weight: 700;
+        word-wrap: break-word;
+        font-size: 1.1rem;
+        font-weight: bold;
         text-align: center;
-        padding: 0;
+        width: 100%;
+        padding: 0px 20px;
             }
     }
     #currentPodcastDiv {
@@ -246,7 +249,7 @@
       }
       #paginationBtn {
         @include flex-centar-row();
-        padding: 50px 0px;
+        padding: 50px 0px 20px 0px;
         width: 100%;
         gap: 20px;
         #previousPage,

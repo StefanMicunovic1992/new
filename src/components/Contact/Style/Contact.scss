@@ -308,7 +308,6 @@
   #mainDivContact {
     padding: 40px 20px;
     width: 100vw;
-    // height: 100vh;
     #contactDescription {
       padding: 50px 10px;
       h2 {
@@ -325,12 +324,15 @@
         margin-bottom: 10px;
         .labelInputIconDiv {
           width: 100%;
-          gap: 10px;
+          gap: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           label {
-            width: 20vw;
+            width: 30vw;
           }
           input {
-            width: 70%;
+            width: 80vw;
           }
         }
         textarea {

@@ -318,13 +318,16 @@
   }
   #mainDivContact #contactDiv .oneInput .labelInputIconDiv {
     width: 100%;
-    gap: 10px;
+    gap: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   #mainDivContact #contactDiv .oneInput .labelInputIconDiv label {
-    width: 20vw;
+    width: 30vw;
   }
   #mainDivContact #contactDiv .oneInput .labelInputIconDiv input {
-    width: 70%;
+    width: 80vw;
   }
   #mainDivContact #contactDiv .oneInput textarea {
     max-width: 90vw;
