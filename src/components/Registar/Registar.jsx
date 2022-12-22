@@ -19,13 +19,11 @@ function Registar() {
     const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
       let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
+       axios.post("/app/checkCookie", cookieSend)
+            .then((res) => checkRes(res));
 
         async function checkRes(res) {
-        console.log(res.status)
-        if (res.status != 201) {
+        if (res.status !== 201) {
           Cookies.remove("loginCookie");
           history("/");
         } else {
@@ -44,7 +42,7 @@ function Registar() {
         email: email,
         password: password
       }
-      const result = axios.post('/app/signup', registared)
+      axios.post('/app/signup', registared)
         .then(response => check(response.data))
         .catch(error=>console.log(error))
       function check(data) {

@@ -1,7 +1,7 @@
+import './Style/Comments.css'
+import axios from "../../Axios-API/Axios";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import axios from "../../Axios-API/Axios";
-import './Style/Comments.css'
 
 
 function Comments() {
@@ -19,8 +19,8 @@ const addComent = () =>{
             username: currentUser.username,
             video: dataOfVideo[0].contentDetails.videoId
         }
-        const sendComment = axios.post("/app/sendcomment", commentData)
-        .then((res) => setAllComments(res.data.dataOfcomment))
+        axios.post("/app/sendcomment", commentData)
+              .then((res) => setAllComments(res.data.dataOfcomment))
 
         comment.value = '';
     }
@@ -30,8 +30,8 @@ useEffect(() => {
   if(typeof dataOfVideo == 'undefined'){
     return
   }else{
-    const sendComment = axios.post("/app/getAllComents", dataOfVideo[0].contentDetails)
-    .then((res) => setAllComments(res.data.dataOfcomment))
+     axios.post("/app/getAllComents", dataOfVideo[0].contentDetails)
+          .then((res) => setAllComments(res.data.dataOfcomment))
   }
   }, []);
 
@@ -42,7 +42,7 @@ const deleteComment = (e) =>{
     idOfVideo:dataOfVideo[0].contentDetails.videoId
   }
 
-  const deleteCommentInDatabase = axios.post("/app/deleteComment", dataOfComment)
+   axios.post("/app/deleteComment", dataOfComment)
         .then((res) => setAllComments(res.data.dataOfcomment))
 }
 
@@ -55,12 +55,10 @@ const checkUser = (elem) =>{
 
 useEffect(() => {
   isExistingComments();
-  console.log(allComments)
   }, [allComments]);
 
 const isExistingComments = () =>{
-  console.log(allComments)
-  if(typeof allComments == 'undefined' || allComments.length == 0){
+  if(typeof allComments === 'undefined' || allComments.length === 0){
     return <p id="noComments">There are no comments for this video</p>
   }
 }

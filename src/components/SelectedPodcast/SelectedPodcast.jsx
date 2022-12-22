@@ -1,14 +1,15 @@
 import "./Style/SelectedPodcast.css";
+import axios from "../../Axios-API/Axios";
+import Cookies from "js-cookie";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { setCurrentUser } from "../../store/currentUserSlice";
 import { setVideoId } from "../../store/videoIdSlice";
-import axios from "../../Axios-API/Axios";
-import Cookies from "js-cookie";
 
 
 function SelectedPodcast() {
+
   const idOfSelectedPodcast = useSelector((state) => state.onePodcast.selectedPodcast);
   const history = useNavigate();
   const dispatch = useDispatch();
@@ -23,13 +24,11 @@ function SelectedPodcast() {
     const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
       let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
+       axios.post("/app/checkCookie", cookieSend)
+            .then((res) => checkRes(res));
 
         async function checkRes(res) {
-        console.log(res.status)
-        if (res.status != 201) {
+        if (res.status !== 201) {
           Cookies.remove("loginCookie");
           history("/");
         } else {
@@ -50,7 +49,7 @@ function SelectedPodcast() {
   const fetchVideo = async (playlistId) => {
     setPlaylistIdOfPodcast(playlistId);
     const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=15&playlistId=${playlistId}&key=AIzaSyC2YVRyg7s8EiUvepq6E5go2AiFQV1Mj2I`;
-    const allVideoFromPlaylist = fetch(url)
+     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setAllVideoFromSelectedPodcast(data.items);
@@ -61,22 +60,18 @@ function SelectedPodcast() {
 
   const fetchNextPage = (token) => {
     const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=15&pageToken=${token}&playlistId=${playlistIdOfPodcast}&key=AIzaSyC2YVRyg7s8EiUvepq6E5go2AiFQV1Mj2I`;
-    const selectedPodcast = fetch(url)
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setNextPageToken(data.nextPageToken);
         setPreviousToken(data.prevPageToken);
         setAllVideoFromSelectedPodcast(data.items);
-        console.log(data.items)
       })
       .catch((error) => console.log(error));
   };
 
   const playVideo = (e) => {
-    console.log(e.target.dataset.id);
-    console.log(allVideoFromSelectedPodcast)
     const dataOFVideo = allVideoFromSelectedPodcast.filter(elem=>elem.contentDetails.videoId == e.target.dataset.id)
-    console.log(dataOFVideo);
     dispatch(setVideoId(dataOFVideo))
     history('/video')
   };

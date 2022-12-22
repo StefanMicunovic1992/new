@@ -9,11 +9,11 @@ import { setCurrentUser } from "../../store/currentUserSlice";
 
 
 function SideBarAllPodcast() {
+  
   const history = useNavigate();
 
   const [podcast, setPodcast] = useState();
-  const [dataOfAllPodcastFromDatabase, setDataOfAllPodcastFromDatabase] =
-    useState();
+  const [dataOfAllPodcastFromDatabase, setDataOfAllPodcastFromDatabase] = useState();
   const idOfPodcast = useSelector((state) => state.onePodcast.selectedPodcast);
   const dispatch = useDispatch();
 

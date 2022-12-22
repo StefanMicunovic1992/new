@@ -17,13 +17,11 @@ function YourAccount() {
     const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
       let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
+       axios.post("/app/checkCookie", cookieSend)
+            .then((res) => checkRes(res));
 
         async function checkRes(res) {
-        console.log(res.status)
-        if (res.status != 201) {
+        if (res.status !== 201) {
           Cookies.remove("loginCookie");
           history("/");
         } else {
@@ -54,29 +52,25 @@ function YourAccount() {
         email: newEmail?newEmail:'no change',
         password: newPass?newPass:'no change'
     }
-    console.log(newData);
     
-    const result = axios.post("/app/saveChanges", newData)
-                    .then((res) => checkResponse(res.data));
+     axios.post("/app/saveChanges", newData)
+          .then((res) => checkResponse(res.data));
     
     const checkResponse = (data) =>{
       if(data == 'ok'){
         deleteCookieAndLogout()
       }else{
-        console.log(data)
         document.getElementById('responseMessage').innerText = data
       }
     }
   }
 
   const deleteAccount = () =>{
-    console.log(currentUser.username);
     const dataOfUser = {username:currentUser.username}
-    const axiosDelete = axios.post("/app/deleteaccount", dataOfUser)
-                    .then((res) => checkResponse(res));
+    axios.post("/app/deleteaccount", dataOfUser)
+          .then((res) => checkResponse(res));
 
     const checkResponse = (data) =>{
-      console.log(data)
       if(data.data.msg == 'succes'){
         deleteCookieAndLogout();
       }

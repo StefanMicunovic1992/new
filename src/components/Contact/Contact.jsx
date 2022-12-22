@@ -1,10 +1,10 @@
 import "./Style/Contact.css";
+import axios from "../../Axios-API/Axios";
+import Cookies from "js-cookie";
 import Navigation from "../Navigation/Navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import axios from "../../Axios-API/Axios";
-import Cookies from "js-cookie";
 import { setCurrentUser } from "../../store/currentUserSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -24,12 +24,11 @@ function Contact() {
     const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
       let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
+       axios.post("/app/checkCookie", cookieSend)
+            .then((res) => checkRes(res));
 
         async function checkRes(res) {
-        if (res.status != 201) {
+        if (res.status !== 201) {
           Cookies.remove("loginCookie");
           history("/");
         } else {

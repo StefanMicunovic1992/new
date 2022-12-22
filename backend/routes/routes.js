@@ -18,7 +18,6 @@ router.post('/signup', async (req, res) => {
     let findUserByUsername = await signUpTemplate.findOne({ username: req.body.username });
     
     if (findUserByEmail || findUserByUsername) {
-        console.log('postoji')
         return res.json({ status: "error", error: "Account on this email or username already existing" });
     } else {
         const signUpUser = new signUpTemplate({
@@ -26,7 +25,6 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: securePassword
         })
-        console.log(signUpUser);
         signUpUser.save()
             .then(data => {
                 res.json(data)
@@ -39,8 +37,9 @@ router.post('/signup', async (req, res) => {
 
 router.post('/findUser', async (req, res) => {
     
-    console.log(req.body);
     let findUser = await signUpTemplate.findOne({ username: req.body.username });
+    // let findUser = await signUpTemplate.findOne({ username: req.body.username });
+
     if (findUser) {
         console.log(findUser)
         bcrypt.compare(req.body.password, findUser.password, (err, data) => {
@@ -58,7 +57,7 @@ router.post('/findUser', async (req, res) => {
             }
         })
     } else {
-        console.log('ne postoji');
+        return res.status(203).json({ msg: "Wrong username or password" })
     }
 })
 

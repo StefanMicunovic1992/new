@@ -1,11 +1,11 @@
+import "./Style/PlayVideo.css";
+import Comments from "../Comments/Comments";
+import Navigation from "../Navigation/Navigation";
+import Cookies from "js-cookie";
+import axios from "../../Axios-API/Axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Comments from "../Comments/Comments";
-import Navigation from "../Navigation/Navigation";
-import "./Style/PlayVideo.css";
-import Cookies from "js-cookie";
-import axios from "../../Axios-API/Axios";
 import { setCurrentUser } from "../../store/currentUserSlice";
 import { useDispatch } from "react-redux";
 
@@ -21,12 +21,10 @@ function PlayVideo() {
     const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
       let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
+       axios.post("/app/checkCookie", cookieSend)
+            .then((res) => checkRes(res));
 
         async function checkRes(res) {
-        console.log(res.status)
         if (res.status !== 201) {
           Cookies.remove("loginCookie");
           history("/");

@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "../../Axios-API/Axios";
 import "./Style/Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import axios from "../../Axios-API/Axios";
 import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../store/currentUserSlice";
-
-
 
 function Login() {
   
@@ -19,13 +17,11 @@ function Login() {
     const isCookie = Cookies.get("loginCookie");
     if (isCookie) {
       let cookieSend = { isCookie };
-      const result = axios
-        .post("/app/checkCookie", cookieSend)
-        .then((res) => checkRes(res));
+       axios.post("/app/checkCookie", cookieSend)
+            .then((res) => checkRes(res));
 
         async function checkRes(res) {
-        console.log(res.status)
-        if (res.status != 201) {
+        if (res.status !== 201) {
           Cookies.remove("loginCookie");
           history("/");
         } else {
@@ -40,25 +36,25 @@ function Login() {
 
   const sendLoginData = async (e) => {
     e.preventDefault();
-    const login = {
-      username: username,
-      password: password,
-    };
-    const result = await axios
-      .post("/app/findUser", login)
-      .then((res) => checkResponseStatus(res));
-    function checkResponseStatus(res) {
-      console.log(res);
-      if (res.status == 200) {
-        dispatch(setCurrentUser(res.data[1].administrator));
-        Cookies.set("loginCookie", `${res.data[0].accessToken}`, {
-          expires: 7,
-        });
-        history("/home_page");
-      } else {
-        console.log(res.status);
-        alert(res.data.msg);
+    if(username && password){
+      const login = {
+        username: username,
+        password: password,
+      };
+      await axios.post("/app/findUser", login)
+                  .then((res) => checkResponseStatus(res));
+                  
+      function checkResponseStatus(res) {
+        if (res.status == 200) {
+          dispatch(setCurrentUser(res.data[1].administrator));
+          Cookies.set("loginCookie", `${res.data[0].accessToken}`, {expires: 7,});
+          history("/home_page");
+        } else {
+          alert(res.data.msg);
+        }
       }
+    }else{
+      alert('You must fill in all input')
     }
   }
 
